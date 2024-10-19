@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="static\style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="container">
+        <div class="div1">
+            Spam E-Mail Detector
+        </div>
+        <div class="div2">
+            <form action="/check" method="post">
+                <div class="div21">
+                    E-Mail:<pre>  </pre> <textarea name="em" id="em" placeholder="Write your email here"></textarea>
+                </div>
+                <div class="div22">
+                    <input type="submit" id="ch" value="Check">
+                </div>
+            </form>
+        </div>
+        <div class="div3" style="visibility: {{ div3_vis }}">  
+            {% if is_spam %}
+            <div class="div41">
+                <i class='fa-solid fa-triangle-exclamation' style='color: #ff0000;'></i><span class='div411' style='color: red;'>Spam</span>
+            </div>
+            {% else %}
+            <div class="div41">
+                <i class='fa-solid fa-circle-check' style='color: #3ae456;'></i><span class='div411' style='color: #3ae456;'>Not Spam</span></span>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
